@@ -1,0 +1,92 @@
+:root {
+  --bg: #0b1020;
+  --panel: #131a2e;
+  --panel2: #0f1526;
+  --line: #263149;
+  --ink: #e8edf7;
+  --muted: #9aa8c4;
+  --accent: #5b8cff;
+  --w: #5b8cff;
+  --k: #26c2a3;
+  --o: #6b7690;
+  --green: #2ec16a;
+  --amber: #e5a13a;
+  --blue: #4b8dff;
+  --red: #e5545b;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: radial-gradient(1200px 600px at 70% -10%, #17203a 0%, var(--bg) 55%);
+  color: var(--ink);
+  font: 15px/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+.wrap { max-width: 1080px; margin: 0 auto; padding: 32px 20px 60px; }
+header h1 { font-size: 34px; margin: 0 0 6px; letter-spacing: -0.5px; }
+header .sub { color: var(--muted); max-width: 760px; margin: 0; }
+header .sub b { color: var(--ink); }
+
+.controls {
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px;
+  margin: 24px 0 8px;
+}
+.ctrl { background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 12px 14px; }
+.ctrl label { display: block; font-size: 12px; text-transform: uppercase; letter-spacing: 0.6px; color: var(--muted); margin-bottom: 8px; }
+.ctrl select, .ctrl input[type="range"] { width: 100%; }
+.ctrl select {
+  background: var(--panel2); color: var(--ink); border: 1px solid var(--line);
+  border-radius: 8px; padding: 8px; font-size: 13px;
+}
+.pill { background: var(--panel2); border: 1px solid var(--line); border-radius: 999px; padding: 1px 8px; color: var(--accent); font-weight: 600; }
+input[type="range"] { accent-color: var(--accent); }
+
+.modelnote { color: var(--muted); font-size: 13px; margin: 10px 2px 0; }
+
+.summary { background: var(--panel); border: 1px solid var(--line); border-radius: 16px; padding: 20px; margin: 20px 0; }
+.total { display: flex; align-items: baseline; gap: 12px; }
+.totalnum { font-size: 40px; font-weight: 800; letter-spacing: -1px; }
+.totallbl { color: var(--muted); text-transform: uppercase; font-size: 12px; letter-spacing: 1px; }
+.bar { display: flex; height: 22px; border-radius: 8px; overflow: hidden; margin: 14px 0 10px; background: var(--panel2); border: 1px solid var(--line); }
+.seg { height: 100%; }
+.seg-w { background: var(--w); }
+.seg-k { background: var(--k); }
+.seg-o { background: var(--o); }
+.legend { display: flex; gap: 18px; flex-wrap: wrap; color: var(--muted); font-size: 13px; }
+.sw { display: inline-block; width: 11px; height: 11px; border-radius: 3px; margin-right: 6px; vertical-align: middle; }
+.sw-w { background: var(--w); } .sw-k { background: var(--k); } .sw-o { background: var(--o); }
+.cheapest { margin: 14px 0 0; font-size: 14px; }
+.cheapest.none { color: var(--amber); }
+.cheapest b { color: var(--accent); }
+
+.insight {
+  background: linear-gradient(90deg, #1a2440, #131a2e);
+  border: 1px solid #2f3d63; border-left: 3px solid var(--accent);
+  border-radius: 12px; padding: 14px 16px; margin: 4px 0 22px; color: #cdd7ef; font-size: 14px;
+}
+.insight b { color: var(--ink); }
+
+.grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+.catcol h2 { font-size: 13px; text-transform: uppercase; letter-spacing: 1px; color: var(--muted); margin: 0 0 10px; }
+.hw { background: var(--panel); border: 1px solid var(--line); border-left: 4px solid var(--line); border-radius: 10px; padding: 12px 13px; margin-bottom: 10px; }
+.hwtop { display: flex; justify-content: space-between; align-items: center; gap: 8px; }
+.hwname { font-weight: 600; font-size: 14px; }
+.badge { font-size: 11px; font-weight: 700; padding: 2px 8px; border-radius: 999px; white-space: nowrap; }
+.hwmeta { display: flex; justify-content: space-between; color: var(--muted); font-size: 12px; margin: 8px 0 4px; }
+.hwfoot { font-size: 12px; color: var(--muted); }
+
+.v-fits { border-left-color: var(--green); }
+.v-fits .badge { background: rgba(46,193,106,0.15); color: var(--green); }
+.v-tight { border-left-color: var(--amber); }
+.v-tight .badge { background: rgba(229,161,58,0.16); color: var(--amber); }
+.v-multi { border-left-color: var(--blue); }
+.v-multi .badge { background: rgba(75,141,255,0.16); color: var(--blue); }
+.v-no { border-left-color: var(--red); opacity: 0.72; }
+.v-no .badge { background: rgba(229,84,91,0.16); color: var(--red); }
+
+footer { margin-top: 28px; }
+footer p { color: var(--muted); font-size: 12px; max-width: 900px; }
+
+@media (max-width: 860px) {
+  .controls { grid-template-columns: repeat(2, 1fr); }
+  .grid { grid-template-columns: 1fr; }
+}
